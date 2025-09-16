@@ -33,7 +33,8 @@
       "Bash(/dev/null)",
       "Bash(osascript:*)",
       "Bash(git add:*)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []

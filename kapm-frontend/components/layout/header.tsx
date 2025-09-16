@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Lock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslations, useLocale } from 'next-intl'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
@@ -120,6 +120,12 @@ export function Header() {
         {/* Language Switcher & CTA Button */}
         <div className="hidden lg:flex lg:items-center lg:space-x-4">
           <LanguageSwitcher />
+          <Link href={`/${locale}/login`}>
+            <Button variant="outline" className="border-brand-600 text-brand-600 hover:bg-brand-50">
+              <Lock className="mr-2 h-4 w-4" />
+              {t('login')}
+            </Button>
+          </Link>
           <Button className="bg-brand-600 hover:bg-brand-500">
             {t('contact')}
           </Button>
@@ -171,6 +177,12 @@ export function Header() {
               ))}
             </ul>
             <div className="mt-8 space-y-4">
+              <Link href={`/${locale}/login`} className="block">
+                <Button variant="outline" className="w-full border-brand-600 text-brand-600 hover:bg-brand-50">
+                  <Lock className="mr-2 h-4 w-4" />
+                  {t('login')}
+                </Button>
+              </Link>
               <Button className="w-full bg-brand-600 hover:bg-brand-500">
                 {t('contact')}
               </Button>
