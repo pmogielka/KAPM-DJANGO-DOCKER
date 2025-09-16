@@ -1,0 +1,18 @@
+# Frontend Development Dockerfile - ZAWSZE port 3003
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json* ./
+RUN npm install
+
+# Copy app files
+COPY . .
+
+# WAŻNE: Port 3003 dla frontendu
+EXPOSE 3003
+ENV PORT 3003
+
+# Start development server na porcie 3003
+CMD ["npm", "run", "dev"]

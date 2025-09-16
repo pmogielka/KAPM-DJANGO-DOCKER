@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komponenty Kart - Navy Design System</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body class="bg-background">
+    <div class="container-wide py-12">
+        <h1 class="text-5xl font-heading font-bold text-navy-800 mb-12">Komponenty Kart</h1>
+
+        <!-- Podstawowe karty -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Podstawowe Karty</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Karta podstawowa -->
+                <div class="card">
+                    <h3 class="text-xl font-heading font-semibold text-navy-800 mb-3">Karta Podstawowa</h3>
+                    <p class="text-text-secondary mb-4">To jest przykładowa karta z cieniem. Zawiera tytuł, opis oraz możliwość dodania przycisku akcji.</p>
+                    <button class="btn-primary btn-sm">Dowiedz się więcej</button>
+                </div>
+
+                <!-- Karta z ramką -->
+                <div class="card-bordered">
+                    <h3 class="text-xl font-heading font-semibold text-navy-800 mb-3">Karta z Ramką</h3>
+                    <p class="text-text-secondary mb-4">Karta z delikatną ramką zamiast cienia. Idealna dla minimalistycznych designów.</p>
+                    <button class="btn-outline btn-sm">Zobacz więcej</button>
+                </div>
+
+                <!-- Karta granatowa -->
+                <div class="card-navy">
+                    <h3 class="text-xl font-heading font-semibold text-white mb-3">Karta Granatowa</h3>
+                    <p class="text-gray-200 mb-4">Karta z granatowym gradientem tła. Wyróżnia się na jasnym tle strony.</p>
+                    <button class="btn bg-white text-navy-800 hover:bg-gray-100 btn-sm">Akcja</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Karty z obrazkami -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Karty z Obrazkami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Karta z obrazkiem na górze -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-navy-lg transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-navy-600 to-navy-800"></div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-heading font-semibold text-navy-800 mb-2">Obrazek na Górze</h3>
+                        <p class="text-text-secondary mb-4">Klasyczna karta z obrazkiem lub gradientem na górze.</p>
+                        <div class="flex gap-2">
+                            <button class="btn-primary btn-sm">Główna akcja</button>
+                            <button class="btn-ghost btn-sm">Anuluj</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Karta pozioma -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-navy-lg transition-all duration-300 md:col-span-2">
+                    <div class="flex">
+                        <div class="w-1/3 bg-gradient-to-br from-accent to-accent-dark"></div>
+                        <div class="w-2/3 p-6">
+                            <h3 class="text-xl font-heading font-semibold text-navy-800 mb-2">Karta Pozioma</h3>
+                            <p class="text-text-secondary mb-4">Karta z układem poziomym, gdzie obrazek znajduje się z boku treści. Idealna dla list produktów.</p>
+                            <button class="btn-accent btn-sm">Zobacz szczegóły</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Karty informacyjne -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Karty Informacyjne</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Karta statystyki -->
+                <div class="bg-white rounded-lg p-6 border border-navy-800/10">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-medium text-text-tertiary">Użytkownicy</span>
+                        <span class="badge-success">+12%</span>
+                    </div>
+                    <div class="text-3xl font-bold text-navy-800 mb-1">1,234</div>
+                    <p class="text-sm text-text-secondary">W tym miesiącu</p>
+                </div>
+
+                <!-- Karta z ikoną -->
+                <div class="bg-gradient-to-br from-navy-800 to-navy-900 rounded-lg p-6 text-white">
+                    <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-2xl font-bold mb-1">89%</div>
+                    <p class="text-gray-200 text-sm">Wydajność systemu</p>
+                </div>
+
+                <!-- Karta z wykresem -->
+                <div class="bg-white rounded-lg p-6 border border-accent/20">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-sm font-medium text-text-tertiary">Przychody</span>
+                        <span class="badge-accent">Aktywne</span>
+                    </div>
+                    <div class="text-2xl font-bold text-navy-800 mb-2">$42,500</div>
+                    <div class="h-16 flex items-end gap-1">
+                        <div class="flex-1 bg-accent/20 rounded-t" style="height: 40%"></div>
+                        <div class="flex-1 bg-accent/30 rounded-t" style="height: 70%"></div>
+                        <div class="flex-1 bg-accent/40 rounded-t" style="height: 50%"></div>
+                        <div class="flex-1 bg-accent rounded-t" style="height: 90%"></div>
+                        <div class="flex-1 bg-accent/60 rounded-t" style="height: 60%"></div>
+                    </div>
+                </div>
+
+                <!-- Karta z postępem -->
+                <div class="bg-white rounded-lg p-6 shadow-md">
+                    <h4 class="text-lg font-semibold text-navy-800 mb-2">Postęp Projektu</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="text-text-secondary">Ukończono</span>
+                                <span class="font-medium text-navy-700">75%</span>
+                            </div>
+                            <div class="w-full bg-navy-100 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-navy-600 to-accent h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-text-tertiary">Pozostało 5 dni do deadline</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Karty zespołu -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Karty Zespołu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Karta członka zespołu -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-navy-lg transition-all duration-300">
+                    <div class="h-32 bg-gradient-to-br from-navy-600 to-accent"></div>
+                    <div class="relative px-6 pb-6">
+                        <div class="w-20 h-20 bg-white rounded-full border-4 border-white shadow-md mx-auto -mt-10 mb-4 flex items-center justify-center bg-gradient-to-br from-navy-700 to-navy-900">
+                            <span class="text-2xl font-bold text-white">JK</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-navy-800">Jan Kowalski</h4>
+                        <p class="text-sm text-text-secondary mb-3">Senior Developer</p>
+                        <div class="flex justify-center gap-3">
+                            <a href="#" class="text-navy-600 hover:text-navy-800">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-navy-600 hover:text-navy-800">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Powtórz dla innych członków zespołu -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden text-center hover:shadow-navy-lg transition-all duration-300">
+                    <div class="h-32 bg-gradient-to-br from-accent to-navy-700"></div>
+                    <div class="relative px-6 pb-6">
+                        <div class="w-20 h-20 bg-white rounded-full border-4 border-white shadow-md mx-auto -mt-10 mb-4 flex items-center justify-center bg-gradient-to-br from-accent to-accent-dark">
+                            <span class="text-2xl font-bold text-white">AN</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-navy-800">Anna Nowak</h4>
+                        <p class="text-sm text-text-secondary mb-3">UX Designer</p>
+                        <div class="flex justify-center gap-3">
+                            <a href="#" class="text-navy-600 hover:text-navy-800">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-navy-600 hover:text-navy-800">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Karty funkcjonalne -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Karty Funkcjonalne</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Karta cenowa -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-navy-lg transition-all duration-300">
+                    <div class="bg-gradient-to-r from-navy-700 to-navy-900 text-white p-6">
+                        <h3 class="text-xl font-semibold mb-2">Plan Podstawowy</h3>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold">$29</span>
+                            <span class="text-gray-300 ml-2">/miesiąc</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-status-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-text-secondary">10 projektów</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-status-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-text-secondary">100 GB przestrzeni</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-status-success mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-text-secondary">Wsparcie email</span>
+                            </li>
+                        </ul>
+                        <button class="btn-primary w-full">Wybierz plan</button>
+                    </div>
+                </div>
+
+                <!-- Karta produktu -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-navy-lg transition-all duration-300 group">
+                    <div class="relative h-64 bg-gradient-to-br from-navy-600 to-accent overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300"></div>
+                        <div class="absolute top-4 right-4">
+                            <span class="badge bg-red-500 text-white">-25%</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-navy-800 mb-2">Premium Package</h3>
+                        <p class="text-text-secondary mb-4">Kompletne rozwiązanie dla Twojego biznesu z pełnym wsparciem.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <span class="text-2xl font-bold text-navy-800">$199</span>
+                                <span class="text-sm text-text-tertiary line-through ml-2">$265</span>
+                            </div>
+                            <div class="flex text-status-warning">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <button class="btn-accent w-full">Dodaj do koszyka</button>
+                    </div>
+                </div>
+
+                <!-- Karta testimonial -->
+                <div class="bg-white rounded-lg shadow-md p-6 relative">
+                    <div class="absolute top-4 left-4 text-6xl text-navy-100 leading-none">"</div>
+                    <div class="relative z-10">
+                        <p class="text-text-secondary italic mb-6 text-lg">Najlepsze rozwiązanie, jakie kiedykolwiek używaliśmy. Zwiększyło naszą produktywność o 200%!</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gradient-to-br from-navy-700 to-navy-900 rounded-full flex items-center justify-center text-white font-bold mr-3">
+                                MK
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-navy-800">Marek Kowalczyk</h4>
+                                <p class="text-sm text-text-tertiary">CEO, TechCorp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

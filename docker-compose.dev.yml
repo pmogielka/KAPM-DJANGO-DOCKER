@@ -1,0 +1,86 @@
+# Docker Compose dla środowiska deweloperskiego
+# Frontend: 3003, Backend: 8003
+version: '3.8'
+
+services:
+  # Frontend Development - port 3003
+  frontend-dev:
+    build:
+      context: ./kapm-frontend
+      dockerfile: Dockerfile.dev
+    container_name: kapm-frontend-dev
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:8003/api
+    volumes:
+      - ./kapm-frontend:/app
+      - /app/node_modules
+      - /app/.next
+    command: npm run dev
+    networks:
+      - kapm-network-dev
+    restart: unless-stopped
+
+  # Backend Development - port 8003
+  backend-dev:
+    build:
+      context: ./kapm-backend
+      dockerfile: Dockerfile.dev
+    container_name: kapm-backend-dev
+    ports:
+      - "8003:8003"
+    environment:
+      - DEBUG=True
+      - DATABASE_URL=postgresql://kapm_user:kapm_pass@postgres-dev:5432/kapm_db
+      - DB_HOST=postgres-dev
+      - DB_NAME=kapm_db
+      - DB_USER=kapm_user
+      - DB_PASSWORD=kapm_pass
+      - DB_PORT=5432
+      - REDIS_URL=redis://redis-dev:6379/0
+      - SECRET_KEY=dev-secret-key-for-development-only
+      - ALLOWED_HOSTS=*
+    depends_on:
+      - postgres-dev
+      - redis-dev
+    volumes:
+      - ./kapm-backend:/app
+    command: python manage.py runserver 0.0.0.0:8003
+    networks:
+      - kapm-network-dev
+    restart: unless-stopped
+
+  # PostgreSQL for development
+  postgres-dev:
+    image: postgres:15-alpine
+    container_name: kapm-postgres-dev
+    environment:
+      - POSTGRES_DB=kapm_db
+      - POSTGRES_USER=kapm_user
+      - POSTGRES_PASSWORD=kapm_pass
+    ports:
+      - "5434:5432"  # Mapowany na 5434 żeby nie kolidować z innym PostgreSQL
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
+    networks:
+      - kapm-network-dev
+    restart: unless-stopped
+
+  # Redis for development
+  redis-dev:
+    image: redis:7-alpine
+    container_name: kapm-redis-dev
+    ports:
+      - "6380:6379"  # Mapowany na 6380 żeby nie kolidować z lokalnym Redis
+    networks:
+      - kapm-network-dev
+    restart: unless-stopped
+
+networks:
+  kapm-network-dev:
+    driver: bridge
+
+volumes:
+  postgres_data_dev:

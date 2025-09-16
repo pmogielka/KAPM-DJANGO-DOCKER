@@ -1,0 +1,244 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "news": "News",
+    "publications": "Publications",
+    "team": "Team",
+    "contact": "Contact",
+    "servicesMenu": {
+      "bankruptcyLaw": "Bankruptcy Law",
+      "restructuring": "Restructuring",
+      "consumerBankruptcy": "Consumer Bankruptcy"
+    }
+  },
+  "hero": {
+    "slide1": {
+      "title": "A SECOND CHANCE FOR YOUR BUSINESS",
+      "subtitle": "Bankruptcy and restructuring law",
+      "description": "Comprehensive support in crisis situations",
+      "linkText": "Our specializations"
+    },
+    "slide2": {
+      "title": "RESTRUCTURING IS NOT THE END",
+      "subtitle": "It's a new beginning for your company",
+      "description": "We help preserve your business and regain liquidity",
+      "linkText": "Learn more"
+    },
+    "slide3": {
+      "title": "CONSUMER BANKRUPTCY",
+      "subtitle": "We'll help you get debt relief legally",
+      "description": "Effective assistance in obtaining debt forgiveness",
+      "linkText": "Check your options"
+    },
+    "nav": {
+      "restructuring": "Restructuring",
+      "bankruptcy": "Bankruptcy",
+      "debtRelief": "Debt Relief"
+    },
+    "watchVideo": "Watch video"
+  },
+  "specializations": {
+    "title": "Specializations",
+    "tabs": {
+      "bankruptcy": "Bankruptcy",
+      "restructuring": "Restructuring"
+    },
+    "bankruptcy": {
+      "title": "Bankruptcy Law",
+      "description": "Comprehensive bankruptcy proceedings support",
+      "items": {
+        "corporate": "Corporate Bankruptcy",
+        "consumer": "Consumer Bankruptcy",
+        "liquidation": "Company Liquidation",
+        "trustees": "Trustee Services",
+        "managementProtection": "Management Protection",
+        "managementLiability": "Management Liability"
+      }
+    },
+    "restructuring": {
+      "title": "Restructuring Law",
+      "description": "Saving businesses in crisis",
+      "items": {
+        "arrangementApproval": "Arrangement Approval Proceedings",
+        "acceleratedArrangement": "Accelerated Arrangement Proceedings",
+        "arrangementProceedings": "Arrangement Proceedings",
+        "remedialProceedings": "Remedial Proceedings",
+        "restructuringPlans": "Restructuring Plans",
+        "creditorsNegotiations": "Creditor Negotiations"
+      }
+    },
+    "viewAll": "View all"
+  },
+  "news": {
+    "title": "News",
+    "categories": {
+      "all": "All",
+      "bankruptcy": "Bankruptcy",
+      "restructuring": "Restructuring",
+      "law": "Law",
+      "advice": "Advice"
+    },
+    "items": {
+      "news1": {
+        "title": "Changes in bankruptcy law 2024",
+        "excerpt": "The amendment introduces significant facilitations for entrepreneurs..."
+      },
+      "news2": {
+        "title": "How to prepare for restructuring",
+        "excerpt": "A practical guide for entrepreneurs planning restructuring..."
+      },
+      "news3": {
+        "title": "Consumer bankruptcy - what's changing",
+        "excerpt": "New regulations make debt relief easier for individuals..."
+      }
+    },
+    "date": "January",
+    "readMore": "Read more",
+    "viewAllNews": "View all news"
+  },
+  "about": {
+    "badge": "About Us",
+    "title": "Experience and Professionalism",
+    "description1": "KAPM Law Firm is a team of experienced lawyers specializing in bankruptcy and restructuring law. We help entrepreneurs and individuals navigate difficult financial situations.",
+    "description2": "Our many years of experience in conducting bankruptcy and restructuring proceedings allows us to effectively protect our clients' interests and find optimal solutions even in the most difficult situations.",
+    "features": {
+      "experts": {
+        "title": "Team of Experts",
+        "description": "Licensed restructuring advisors"
+      },
+      "experience": {
+        "title": "Experience",
+        "description": "Hundreds of completed proceedings"
+      },
+      "comprehensive": {
+        "title": "Comprehensive Service",
+        "description": "From analysis to proceeding completion"
+      },
+      "nationwide": {
+        "title": "All of Poland",
+        "description": "We represent clients nationwide"
+      }
+    },
+    "learnMore": "Learn more"
+  },
+  "rankings": {
+    "title": "Our Rankings",
+    "items": {
+      "item1": {
+        "name": "Law Firm Ranking",
+        "category": "Bankruptcy Law"
+      },
+      "item2": {
+        "name": "Legal Excellence",
+        "category": "Restructuring"
+      },
+      "item3": {
+        "name": "Legal Gazette",
+        "category": "Restructuring Advisors"
+      }
+    },
+    "partners": "Partners",
+    "partnerItems": {
+      "item1": {
+        "name": "National Chamber of Restructuring Advisors",
+        "description": "Chamber member"
+      },
+      "item2": {
+        "name": "Association of Bankruptcy Judges",
+        "description": "Substantive partner"
+      }
+    },
+    "viewMore": "View more"
+  },
+  "blogs": {
+    "title": "Blogs",
+    "allBlogs": "All blogs",
+    "readTime": "min",
+    "readArticle": "Read",
+    "ourBlogs": "Our blogs",
+    "items": {
+      "blog1": {
+        "category": "Bankruptcy Law",
+        "title": "Board members' liability for failure to file bankruptcy",
+        "excerpt": "Analysis of legal consequences of delay in filing for bankruptcy...",
+        "author": "Jan Kowalski, Attorney"
+      },
+      "blog2": {
+        "category": "Restructuring",
+        "title": "Remedial proceedings - when to choose",
+        "excerpt": "A guide to the strongest form of business restructuring...",
+        "author": "Anna Nowak, Legal Advisor"
+      }
+    },
+    "categories": {
+      "bankruptcy": "Bankruptcy blog",
+      "restructuring": "Restructuring blog",
+      "advice": "Legal advice",
+      "caselaw": "Case law"
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Stay up to date",
+      "subtitle": "Subscribe to our newsletter for legal updates",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "consent": {
+        "text": "I consent to the processing of my personal data in accordance with the",
+        "link": "Privacy Policy"
+      }
+    },
+    "sections": {
+      "company": "Company",
+      "services": "Services",
+      "resources": "Information",
+      "legal": "Legal"
+    },
+    "tagline": {
+      "line1": "Bankruptcy law specialists",
+      "line2": "and restructuring"
+    },
+    "copyright": "All rights reserved",
+    "company": {
+      "about": "About us",
+      "team": "Team",
+      "career": "Career"
+    },
+    "services": {
+      "corporateBankruptcy": "Corporate Bankruptcy",
+      "consumerBankruptcy": "Consumer Bankruptcy",
+      "restructuring": "Restructuring",
+      "managementProtection": "Management Protection"
+    },
+    "resources": {
+      "news": "News",
+      "blogs": "Blogs"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "companyName": "KAPM Law Firm",
+    "offices": {
+      "office1": "Office 1",
+      "office2": "Office 2"
+    },
+    "weekDays": "Mon-Fri"
+  },
+  "aboutPage": {
+    "backToHome": "Back to homepage",
+    "pageTitle": "About Us",
+    "intro": "KAPM Legal & Tax is one of the leading law firms in Poland, offering comprehensive legal and tax services for business.",
+    "missionTitle": "Our Mission",
+    "missionText": "We operate according to the philosophy \"Law works\" - we believe that law should be a tool supporting business development, not a barrier. That's why we deliver solutions that are not only compliant with regulations, but above all practical and business-effective.",
+    "valuesTitle": "Our Values",
+    "values": {
+      "value1": "Professionalism and highest service standards",
+      "value2": "Innovative approach to problem solving",
+      "value3": "Partnership relations with clients",
+      "value4": "Ethics and social responsibility"
+    }
+  }
+}

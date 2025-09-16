@@ -1,0 +1,244 @@
+{
+  "navigation": {
+    "home": "Strona główna",
+    "about": "O nas",
+    "services": "Usługi",
+    "news": "Aktualności",
+    "publications": "Publikacje",
+    "team": "Zespół",
+    "contact": "Kontakt",
+    "servicesMenu": {
+      "bankruptcyLaw": "Prawo upadłościowe",
+      "restructuring": "Restrukturyzacja",
+      "consumerBankruptcy": "Upadłość konsumencka"
+    }
+  },
+  "hero": {
+    "slide1": {
+      "title": "DRUGA SZANSA DLA TWOJEGO BIZNESU",
+      "subtitle": "Prawo upadłościowe i restrukturyzacyjne",
+      "description": "Kompleksowe wsparcie w sytuacjach kryzysowych",
+      "linkText": "Nasze specjalizacje"
+    },
+    "slide2": {
+      "title": "RESTRUKTURYZACJA TO NIE KONIEC",
+      "subtitle": "To nowy początek dla Twojej firmy",
+      "description": "Pomagamy zachować przedsiębiorstwo i odzyskać płynność",
+      "linkText": "Dowiedz się więcej"
+    },
+    "slide3": {
+      "title": "UPADŁOŚĆ KONSUMENCKA",
+      "subtitle": "Oddłużymy Cię zgodnie z prawem",
+      "description": "Skuteczna pomoc w uzyskaniu umorzenia zobowiązań",
+      "linkText": "Sprawdź możliwości"
+    },
+    "nav": {
+      "restructuring": "Restrukturyzacja",
+      "bankruptcy": "Upadłość",
+      "debtRelief": "Oddłużenie"
+    },
+    "watchVideo": "Zobacz wideo"
+  },
+  "specializations": {
+    "title": "Specjalizacje",
+    "tabs": {
+      "bankruptcy": "Upadłość",
+      "restructuring": "Restrukturyzacja"
+    },
+    "bankruptcy": {
+      "title": "Prawo Upadłościowe",
+      "description": "Kompleksowa obsługa postępowań upadłościowych",
+      "items": {
+        "corporate": "Upadłość przedsiębiorstw",
+        "consumer": "Upadłość konsumencka",
+        "liquidation": "Likwidacja spółek",
+        "trustees": "Obsługa syndyków",
+        "managementProtection": "Ochrona zarządu",
+        "managementLiability": "Odpowiedzialność członków zarządu"
+      }
+    },
+    "restructuring": {
+      "title": "Prawo Restrukturyzacyjne",
+      "description": "Ratowanie przedsiębiorstw w kryzysie",
+      "items": {
+        "arrangementApproval": "Postępowanie o zatwierdzenie układu",
+        "acceleratedArrangement": "Przyspieszone postępowanie układowe",
+        "arrangementProceedings": "Postępowanie układowe",
+        "remedialProceedings": "Postępowanie sanacyjne",
+        "restructuringPlans": "Plany restrukturyzacyjne",
+        "creditorsNegotiations": "Negocjacje z wierzycielami"
+      }
+    },
+    "viewAll": "Zobacz wszystkie"
+  },
+  "news": {
+    "title": "Aktualności",
+    "categories": {
+      "all": "Wszystkie",
+      "bankruptcy": "Upadłość",
+      "restructuring": "Restrukturyzacja",
+      "law": "Prawo",
+      "advice": "Porady"
+    },
+    "items": {
+      "news1": {
+        "title": "Zmiany w prawie upadłościowym 2024",
+        "excerpt": "Nowelizacja przepisów wprowadza istotne ułatwienia dla przedsiębiorców..."
+      },
+      "news2": {
+        "title": "Jak przygotować się do restrukturyzacji",
+        "excerpt": "Praktyczny przewodnik dla przedsiębiorców planujących restrukturyzację..."
+      },
+      "news3": {
+        "title": "Upadłość konsumencka - co się zmienia",
+        "excerpt": "Nowe przepisy ułatwiają oddłużenie osobom fizycznym..."
+      }
+    },
+    "date": "stycznia",
+    "readMore": "Czytaj więcej",
+    "viewAllNews": "Zobacz wszystkie aktualności"
+  },
+  "about": {
+    "badge": "O Kancelarii",
+    "title": "Doświadczenie i Profesjonalizm",
+    "description1": "Kancelaria KAPM to zespół doświadczonych prawników specjalizujących się w prawie upadłościowym i restrukturyzacyjnym. Pomagamy przedsiębiorcom i osobom fizycznym przejść przez trudne sytuacje finansowe.",
+    "description2": "Nasze wieloletnie doświadczenie w prowadzeniu postępowań upadłościowych i restrukturyzacyjnych pozwala nam skutecznie chronić interesy klientów i znajdować optymalne rozwiązania nawet w najtrudniejszych sytuacjach.",
+    "features": {
+      "experts": {
+        "title": "Zespół ekspertów",
+        "description": "Licencjonowani doradcy restrukturyzacyjni"
+      },
+      "experience": {
+        "title": "Doświadczenie",
+        "description": "Setki przeprowadzonych postępowań"
+      },
+      "comprehensive": {
+        "title": "Kompleksowa obsługa",
+        "description": "Od analizy po zakończenie postępowania"
+      },
+      "nationwide": {
+        "title": "Cała Polska",
+        "description": "Reprezentujemy klientów w całym kraju"
+      }
+    },
+    "learnMore": "Dowiedz się więcej"
+  },
+  "rankings": {
+    "title": "Nasze Rankingi",
+    "items": {
+      "item1": {
+        "name": "Ranking Kancelarii",
+        "category": "Prawo Upadłościowe"
+      },
+      "item2": {
+        "name": "Legal Excellence",
+        "category": "Restrukturyzacje"
+      },
+      "item3": {
+        "name": "Gazeta Prawna",
+        "category": "Doradcy Restrukturyzacyjni"
+      }
+    },
+    "partners": "Partnerzy",
+    "partnerItems": {
+      "item1": {
+        "name": "Krajowa Izba Doradców Restrukturyzacyjnych",
+        "description": "Członek izby"
+      },
+      "item2": {
+        "name": "Stowarzyszenie Sędziów Upadłościowych",
+        "description": "Partner merytoryczny"
+      }
+    },
+    "viewMore": "Zobacz więcej"
+  },
+  "blogs": {
+    "title": "Blogi",
+    "allBlogs": "Wszystkie blogi",
+    "readTime": "min",
+    "readArticle": "Czytaj",
+    "ourBlogs": "Nasze blogi",
+    "items": {
+      "blog1": {
+        "category": "Prawo Upadłościowe",
+        "title": "Odpowiedzialność członków zarządu za niezłożenie wniosku",
+        "excerpt": "Analiza konsekwencji prawnych opóźnienia w złożeniu wniosku o upadłość...",
+        "author": "adw. Jan Kowalski"
+      },
+      "blog2": {
+        "category": "Restrukturyzacja",
+        "title": "Postępowanie sanacyjne - kiedy warto wybrać",
+        "excerpt": "Przewodnik po najsilniejszej formie restrukturyzacji przedsiębiorstwa...",
+        "author": "r. pr. Anna Nowak"
+      }
+    },
+    "categories": {
+      "bankruptcy": "Blog o upadłości",
+      "restructuring": "Blog o restrukturyzacji",
+      "advice": "Porady prawne",
+      "caselaw": "Orzecznictwo"
+    }
+  },
+  "footer": {
+    "newsletter": {
+      "title": "Bądź na bieżąco",
+      "subtitle": "Zapisz się do naszego newslettera, aby otrzymywać aktualizacje prawne",
+      "placeholder": "Twój adres e-mail",
+      "button": "Zapisz się",
+      "consent": {
+        "text": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z",
+        "link": "Polityką prywatności"
+      }
+    },
+    "sections": {
+      "company": "Firma",
+      "services": "Usługi",
+      "resources": "Informacje",
+      "legal": "Prawne"
+    },
+    "tagline": {
+      "line1": "Specjaliści prawa upadłościowego",
+      "line2": "i restrukturyzacyjnego"
+    },
+    "copyright": "Wszelkie prawa zastrzeżone",
+    "company": {
+      "about": "O nas",
+      "team": "Zespół",
+      "career": "Kariera"
+    },
+    "services": {
+      "corporateBankruptcy": "Upadłość przedsiębiorstw",
+      "consumerBankruptcy": "Upadłość konsumencka",
+      "restructuring": "Restrukturyzacja",
+      "managementProtection": "Ochrona zarządu"
+    },
+    "resources": {
+      "news": "Aktualności",
+      "blogs": "Blogi"
+    },
+    "legal": {
+      "privacy": "Polityka prywatności",
+      "terms": "Regulamin"
+    },
+    "companyName": "Kancelaria KAPM",
+    "offices": {
+      "office1": "Biuro 1",
+      "office2": "Biuro 2"
+    },
+    "weekDays": "Pn-Pt"
+  },
+  "aboutPage": {
+    "backToHome": "Powrót do strony głównej",
+    "pageTitle": "O nas",
+    "intro": "KAPM Legal & Tax to jedna z wiodących kancelarii prawnych w Polsce, oferująca kompleksową obsługę prawną i podatkową dla biznesu.",
+    "missionTitle": "Nasza misja",
+    "missionText": "Działamy zgodnie z filozofią \"Prawo działa\" – wierzymy, że prawo powinno być narzędziem wspierającym rozwój biznesu, a nie barierą. Dlatego dostarczamy rozwiązania, które są nie tylko zgodne z przepisami, ale przede wszystkim praktyczne i efektywne biznesowo.",
+    "valuesTitle": "Nasze wartości",
+    "values": {
+      "value1": "Profesjonalizm i najwyższe standardy obsługi",
+      "value2": "Innowacyjne podejście do rozwiązywania problemów",
+      "value3": "Partnerskie relacje z klientami",
+      "value4": "Etyka i odpowiedzialność społeczna"
+    }
+  }
+}

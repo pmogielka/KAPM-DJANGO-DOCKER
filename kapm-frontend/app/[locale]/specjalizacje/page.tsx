@@ -1,0 +1,24 @@
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { ArrowLeft } from 'lucide-react'
+import { SpecializationsSection } from '@/components/sections/specializations-section'
+
+export default function SpecjalizacjePage() {
+  return (
+    <div className="min-h-screen py-20">
+      <div className="container">
+        <div className="mb-8">
+          <Button asChild variant="ghost">
+            <Link href="/">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Powrót do strony głównej
+            </Link>
+          </Button>
+        </div>
+
+        <h1 className="text-4xl font-bold mb-8 text-center">Nasze Specjalizacje</h1>
+        <SpecializationsSection />
+      </div>
+    </div>
+  )
+}

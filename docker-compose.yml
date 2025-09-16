@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  # Frontend - Next.js na porcie 3003
+  frontend:
+    build:
+      context: ./kapm-frontend
+      dockerfile: Dockerfile
+    container_name: kapm-frontend
+    ports:
+      - "3003:3003"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://backend:8003/api
+    depends_on:
+      - backend
+    networks:
+      - kapm-network
+    restart: unless-stopped
+
+  # Backend - Django na porcie 8003
+  backend:
+    build:
+      context: ./kapm-backend
+      dockerfile: Dockerfile
+    container_name: kapm-backend
+    ports:
+      - "8003:8003"
+    environment:
+      - DEBUG=False
+      - DATABASE_URL=postgresql://kapm_user:kapm_pass@postgres:5432/kapm_db
+      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=${DJANGO_SECRET_KEY}
+      - ALLOWED_HOSTS=localhost,127.0.0.1,backend
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - media_volume:/app/media
+      - static_volume:/app/static
+    networks:
+      - kapm-network
+    restart: unless-stopped
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8003 --workers 3
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: kapm-postgres
+    environment:
+      - POSTGRES_DB=kapm_db
+      - POSTGRES_USER=kapm_user
+      - POSTGRES_PASSWORD=kapm_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - kapm-network
+    restart: unless-stopped
+    # Brak portu - tylko dostępna wewnętrznie
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: kapm-redis
+    networks:
+      - kapm-network
+    restart: unless-stopped
+    # Brak portu - tylko dostępna wewnętrznie
+
+networks:
+  kapm-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  media_volume:
+  static_volume:

@@ -1,0 +1,408 @@
+/* Importy Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importy czcionek */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+
+/* Globalne style bazowe */
+@layer base {
+  /* Resetowanie i podstawowe style */
+  * {
+    @apply border-navy-800/10;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans antialiased;
+  }
+
+  /* Typografia - nagłówki */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-navy-800 font-semibold;
+  }
+
+  h1 {
+    @apply text-5xl leading-tight;
+  }
+
+  h2 {
+    @apply text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-3xl leading-tight;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5 {
+    @apply text-xl;
+  }
+
+  h6 {
+    @apply text-lg;
+  }
+
+  /* Paragrafy i tekst */
+  p {
+    @apply text-base leading-relaxed text-text-secondary;
+  }
+
+  a {
+    @apply text-accent hover:text-accent-dark transition-colors duration-200;
+  }
+
+  strong {
+    @apply font-semibold text-navy-800;
+  }
+
+  /* Listy */
+  ul, ol {
+    @apply space-y-2 text-text-secondary;
+  }
+
+  ul {
+    @apply list-disc list-inside;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+  }
+
+  /* Kod */
+  code {
+    @apply font-mono text-sm bg-navy-800/5 px-2 py-1 rounded text-navy-700;
+  }
+
+  pre {
+    @apply font-mono text-sm bg-navy-900 text-gray-100 p-4 rounded-lg overflow-x-auto;
+  }
+
+  pre code {
+    @apply bg-transparent p-0 text-gray-100;
+  }
+
+  /* Formularze */
+  input, textarea, select {
+    @apply w-full px-4 py-2 border border-navy-800/20 rounded-lg bg-white
+           focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20
+           placeholder:text-text-tertiary transition-all duration-200;
+  }
+
+  label {
+    @apply block text-sm font-medium text-navy-700 mb-2;
+  }
+
+  /* Tabele */
+  table {
+    @apply w-full border-collapse;
+  }
+
+  th {
+    @apply bg-navy-800 text-white text-left px-4 py-3 font-semibold;
+  }
+
+  td {
+    @apply border-b border-navy-800/10 px-4 py-3 text-text-secondary;
+  }
+
+  tr:hover td {
+    @apply bg-navy-50/50;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-500;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-accent/20 text-navy-900;
+  }
+}
+
+/* Komponenty wielokrotnego użytku */
+@layer components {
+  /* Kontenery */
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Sekcje */
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .section-compact {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+
+  /* Karty */
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300
+           hover:shadow-navy-lg hover:-translate-y-1;
+  }
+
+  .card-bordered {
+    @apply bg-white rounded-lg border border-navy-800/10 p-6
+           transition-all duration-300 hover:border-navy-400;
+  }
+
+  .card-navy {
+    @apply bg-gradient-to-br from-navy-800 to-navy-900 text-white rounded-lg shadow-navy-lg p-6;
+  }
+
+  /* Przyciski - podstawowe */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg
+           font-medium text-base transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-navy-800 to-navy-900 text-white
+           hover:from-navy-900 hover:to-navy-950 shadow-md hover:shadow-navy
+           focus:ring-navy-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-navy-100 text-navy-800
+           hover:bg-navy-200 focus:ring-navy-300;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent text-white
+           hover:bg-accent-dark shadow-md hover:shadow-lg
+           focus:ring-accent/50;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-navy-800 text-navy-800
+           hover:bg-navy-800 hover:text-white
+           focus:ring-navy-500;
+  }
+
+  .btn-ghost {
+    @apply btn text-navy-700 hover:bg-navy-100
+           focus:ring-navy-300;
+  }
+
+  /* Rozmiary przycisków */
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-navy-100 text-navy-800;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent/10 text-accent;
+  }
+
+  .badge-success {
+    @apply badge bg-status-success/10 text-status-success;
+  }
+
+  .badge-warning {
+    @apply badge bg-status-warning/10 text-status-warning;
+  }
+
+  .badge-error {
+    @apply badge bg-status-error/10 text-status-error;
+  }
+
+  /* Alerty */
+  .alert {
+    @apply p-4 rounded-lg border;
+  }
+
+  .alert-info {
+    @apply alert bg-accent/5 border-accent/20 text-accent-dark;
+  }
+
+  .alert-success {
+    @apply alert bg-status-success/5 border-status-success/20 text-status-success;
+  }
+
+  .alert-warning {
+    @apply alert bg-status-warning/5 border-status-warning/20 text-status-warning;
+  }
+
+  .alert-error {
+    @apply alert bg-status-error/5 border-status-error/20 text-status-error;
+  }
+
+  /* Nawigacja */
+  .nav-link {
+    @apply text-navy-700 hover:text-navy-900 font-medium
+           transition-colors duration-200 relative;
+  }
+
+  .nav-link-active {
+    @apply text-navy-900 font-semibold;
+  }
+
+  .nav-link-active::after {
+    @apply content-[''] absolute bottom-0 left-0 right-0 h-0.5 bg-accent;
+  }
+
+  /* Overlay i tła */
+  .overlay {
+    @apply fixed inset-0 bg-navy-900/50 backdrop-blur-sm z-40;
+  }
+
+  .gradient-navy {
+    @apply bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950;
+  }
+
+  .gradient-accent {
+    @apply bg-gradient-to-r from-accent to-accent-dark;
+  }
+
+  /* Divider */
+  .divider {
+    @apply border-b border-navy-800/10 my-8;
+  }
+
+  .divider-thick {
+    @apply border-b-2 border-navy-800/20 my-8;
+  }
+
+  /* Szkielet ładowania */
+  .skeleton {
+    @apply animate-pulse bg-gradient-to-r from-navy-100 via-navy-50 to-navy-100
+           bg-[length:200%_100%];
+  }
+
+  /* Tooltip */
+  .tooltip {
+    @apply absolute z-50 px-3 py-2 text-sm font-medium text-white
+           bg-navy-900 rounded-lg shadow-lg pointer-events-none
+           opacity-0 transition-opacity duration-200;
+  }
+
+  .tooltip-visible {
+    @apply opacity-100;
+  }
+}
+
+/* Narzędzia */
+@layer utilities {
+  /* Teksty */
+  .text-gradient {
+    @apply bg-gradient-to-r from-navy-800 to-accent bg-clip-text text-transparent;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Cienie */
+  .shadow-navy-glow {
+    box-shadow: 0 0 30px rgba(15, 23, 42, 0.15);
+  }
+
+  /* Blur efekty */
+  .blur-navy {
+    backdrop-filter: blur(8px);
+    background-color: rgba(15, 23, 42, 0.7);
+  }
+
+  /* Animacje */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Focus visible */
+  .focus-visible-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-navy-500 focus-visible:ring-offset-2;
+  }
+
+  /* Grids */
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .grid-auto-fill {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  /* Aspect ratios */
+  .aspect-cinema {
+    aspect-ratio: 21 / 9;
+  }
+
+  .aspect-golden {
+    aspect-ratio: 1.618 / 1;
+  }
+}
+
+/* Media queries dla specyficznych przypadków */
+@media (prefers-color-scheme: dark) {
+  /* Opcjonalny dark mode - do rozbudowy */
+  .dark-mode {
+    @apply bg-navy-900 text-gray-100;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .no-print {
+    @apply hidden;
+  }
+}

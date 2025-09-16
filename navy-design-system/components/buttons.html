@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komponenty Przycisków - Navy Design System</title>
+    <link rel="stylesheet" href="../css/global.css">
+</head>
+<body class="bg-background">
+    <div class="container-wide py-12">
+        <h1 class="text-5xl font-heading font-bold text-navy-800 mb-12">Komponenty Przycisków</h1>
+
+        <!-- Podstawowe przyciski -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Podstawowe Warianty</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="btn-primary">
+                    Przycisk Primary
+                </button>
+                <button class="btn-secondary">
+                    Przycisk Secondary
+                </button>
+                <button class="btn-accent">
+                    Przycisk Accent
+                </button>
+                <button class="btn-outline">
+                    Przycisk Outline
+                </button>
+                <button class="btn-ghost">
+                    Przycisk Ghost
+                </button>
+            </div>
+        </section>
+
+        <!-- Rozmiary przycisków -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Rozmiary</h2>
+            <div class="flex flex-wrap items-center gap-4">
+                <button class="btn-primary btn-sm">
+                    Mały przycisk
+                </button>
+                <button class="btn-primary">
+                    Normalny przycisk
+                </button>
+                <button class="btn-primary btn-lg">
+                    Duży przycisk
+                </button>
+            </div>
+        </section>
+
+        <!-- Przyciski z ikonami -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Przyciski z Ikonami</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="btn-primary">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    Dodaj element
+                </button>
+                <button class="btn-secondary">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                    </svg>
+                    Pobierz plik
+                </button>
+                <button class="btn-accent">
+                    Wyślij
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Stany przycisków -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Stany</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="btn-primary">
+                    Normalny
+                </button>
+                <button class="btn-primary opacity-75">
+                    Hover (przykład)
+                </button>
+                <button class="btn-primary ring-2 ring-navy-500 ring-offset-2">
+                    Focus
+                </button>
+                <button class="btn-primary" disabled>
+                    Wyłączony
+                </button>
+            </div>
+        </section>
+
+        <!-- Grupy przycisków -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Grupy Przycisków</h2>
+            <div class="space-y-4">
+                <!-- Grupa inline -->
+                <div class="inline-flex rounded-lg shadow-md">
+                    <button class="btn bg-navy-800 text-white hover:bg-navy-900 rounded-l-lg rounded-r-none border-r border-navy-700">
+                        Opcja 1
+                    </button>
+                    <button class="btn bg-navy-800 text-white hover:bg-navy-900 rounded-none border-r border-navy-700">
+                        Opcja 2
+                    </button>
+                    <button class="btn bg-navy-800 text-white hover:bg-navy-900 rounded-r-lg rounded-l-none">
+                        Opcja 3
+                    </button>
+                </div>
+
+                <!-- Grupa pionowa -->
+                <div class="inline-flex flex-col rounded-lg shadow-md">
+                    <button class="btn bg-navy-800 text-white hover:bg-navy-900 rounded-t-lg rounded-b-none border-b border-navy-700">
+                        Góra
+                    </button>
+                    <button class="btn bg-navy-800 text-white hover:bg-navy-900 rounded-none border-b border-navy-700">
+                        Środek
+                    </button>
+                    <button class="btn bg-navy-800 text-white hover:bg-navy-900 rounded-b-lg rounded-t-none">
+                        Dół
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Przyciski specjalne -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Przyciski Specjalne</h2>
+            <div class="flex flex-wrap gap-4">
+                <!-- Przycisk z gradientem -->
+                <button class="btn bg-gradient-to-r from-navy-600 via-navy-800 to-accent text-white shadow-navy hover:shadow-navy-lg transform hover:scale-105 transition-all duration-300">
+                    Gradient Navy
+                </button>
+
+                <!-- Przycisk z animacją -->
+                <button class="btn-primary relative overflow-hidden group">
+                    <span class="relative z-10">Animowany</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-accent to-accent-dark transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                </button>
+
+                <!-- Przycisk ładowania -->
+                <button class="btn-primary flex items-center">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Ładowanie...
+                </button>
+
+                <!-- Przycisk pulsujący -->
+                <button class="btn-accent relative">
+                    <span class="relative z-10">Powiadomienie</span>
+                    <span class="absolute top-0 right-0 -mt-1 -mr-1 flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Przyciski społecznościowe -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-heading font-semibold text-navy-700 mb-8">Przyciski Społecznościowe</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="btn bg-[#1877F2] text-white hover:bg-[#1865D2]">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Facebook
+                </button>
+                <button class="btn bg-[#1DA1F2] text-white hover:bg-[#1A8CD8]">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                    Twitter
+                </button>
+                <button class="btn bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                    </svg>
+                    Instagram
+                </button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

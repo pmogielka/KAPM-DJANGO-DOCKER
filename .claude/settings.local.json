@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(source:*)",
+      "Bash(python manage.py startapp:*)",
+      "Bash(python manage.py:*)",
+      "Bash(npx create-next-app:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker-compose:*)",
+      "Bash(docker logs:*)",
+      "Bash(chmod:*)",
+      "Bash(curl:*)",
+      "Bash(npm install:*)",
+      "Bash(docker ps:*)",
+      "Bash(docker compose:*)",
+      "Bash(lsof:*)",
+      "Bash(docker exec:*)",
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(npm run dev:*)",
+      "Bash(clear)",
+      "Bash(python3:*)",
+      "Bash(pkill:*)",
+      "Bash(pip install:*)",
+      "Bash(django-admin startproject:*)",
+      "Read(//Users/pmogielka-macstudio/Desktop/**)",
+      "Bash(open:*)",
+      "Bash(docker system:*)",
+      "Bash(docker:*)",
+      "Bash(python:*)",
+      "Bash(export DJANGO_SETTINGS_MODULE=config.settings)",
+      "Bash(find:*)",
+      "Bash(xargs kill:*)",
+      "Bash(/dev/null)",
+      "Bash(osascript:*)",
+      "Bash(git add:*)",
+      "Bash(git init:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
