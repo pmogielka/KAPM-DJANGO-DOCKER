@@ -1,127 +1,328 @@
-# KAPM - Kancelaria Adwokacka Prawników i Mediatorów
+# Kancelaria Adwokacka Przemysław Mogiełka (KAPM) 🏛️
 
-Monorepo zawierające kompletny system CMS dla kancelarii prawnej. Repozytorium łączy backend Django (API + panel administracyjny) oraz frontend Next.js (strona publiczna i SPA dla panelu).
+## 📋 O projekcie
 
-## Najważniejsze funkcje
-- Kompletny panel administracyjny z rolami (admin, editor, author, viewer) i statystykami
-- Publiczny serwis prezentujący kancelarię (strony CMS, blog, zespół, specjalizacje, kontakt)
-- JWT (access + refresh) z przechowywaniem ciasteczek HttpOnly po stronie frontendu
-- Biblioteka mediów z obsługą uploadu i metadanych, moderowane komentarze i bogaty moduł blogowy
-- Wielojęzyczność (pl/en) po stronie frontendu, przygotowane tłumaczenia po stronie backendu
-- Przygotowanie do środowiska produkcyjnego: Docker Compose, PostgreSQL, Redis, Gunicorn, Makefile
+Kompleksowy system zarządzania treścią (CMS) oraz portal internetowy dla **Kancelarii Adwokackiej Przemysław Mogiełka**. System łączy profesjonalną stronę internetową z zaawansowanym panelem administracyjnym, umożliwiając efektywne zarządzanie treścią, blogiem prawniczym oraz komunikacją z klientami.
 
-## Stos technologiczny
-### Backend
-- Django 5.2.6, Django REST Framework, django-filter, drf-spectacular (Swagger/OpenAPI)
-- djangorestframework-simplejwt (JWT), django-cors-headers, django-extensions
-- Celery + Redis (broker/result backend), Pillow, Whitenoise
-- Baza SQLite dla dev lokalnego lub PostgreSQL (docker/produkcja)
+### 🎯 Główne cele biznesowe
+- **Profesjonalna prezentacja kancelarii** - elegancka strona internetowa prezentująca usługi prawnicze
+- **Blog prawniczy** - platforma do publikacji artykułów i analiz prawnych
+- **System kontaktu** - sprawna komunikacja z potencjalnymi klientami
+- **Panel administracyjny** - intuicyjne zarządzanie wszystkimi treściami
+- **Wielojęzyczność** - obsługa klientów polskich i międzynarodowych
 
-### Frontend
-- Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS 3
-- Radix UI, Framer Motion, React Hook Form, Zod, next-intl
-- Własny klient API bazujący na Axiosie z odświeżaniem tokenów i obsługą cookies
+## 🚀 Kluczowe funkcjonalności
 
-### DevOps i narzędzia
-- Dockerfile/Docker Compose (produkcyjny i deweloperski), Makefile
-- Skonfigurowane środowiska `.env` (root, backend, frontend)
-- Linting (ESLint), testy Django (`manage.py test`)
+### 👥 Dla klientów kancelarii
+- **Strona główna** z prezentacją kancelarii i aktualności
+- **Specjalizacje prawne** - szczegółowy opis obszarów praktyki
+- **Blog prawniczy** z kategoriami i wyszukiwarką
+- **Zespół prawników** - profile i specjalizacje
+- **Formularz kontaktowy** z walidacją i ochroną przed spamem
+- **Wielojęzyczność** (polski/angielski)
+- **Responsywny design** - idealna prezentacja na wszystkich urządzeniach
 
-## Struktura repozytorium
+### ⚙️ Panel administracyjny
+- **Role i uprawnienia** (Administrator, Redaktor, Autor, Czytelnik)
+- **Zarządzanie treścią** - strony, wpisy blogowe, specjalizacje
+- **Biblioteka mediów** - zarządzanie obrazami i dokumentami
+- **Moderacja komentarzy** - kontrola nad dyskusją
+- **Statystyki i raporty** - monitoring aktywności
+- **API REST** z dokumentacją Swagger
+
+### 🔐 Bezpieczeństwo
+- **JWT Authentication** (access + refresh tokens)
+- **HttpOnly Cookies** - bezpieczne przechowywanie tokenów
+- **CORS Headers** - kontrola dostępu do API
+- **Rate Limiting** - ochrona przed nadużyciami
+- **Szyfrowanie haseł** - bcrypt
+- **Walidacja danych** - Zod schemas
+
+## 🛠️ Stack technologiczny
+
+### Backend (Django)
+| Technologia | Wersja | Zastosowanie |
+|------------|--------|--------------|
+| Django | 5.2.6 | Framework webowy |
+| Django REST Framework | 3.15+ | API REST |
+| PostgreSQL/SQLite | 15+ / 3 | Baza danych |
+| Redis | 7+ | Cache i broker zadań |
+| Celery | 5.3+ | Zadania asynchroniczne |
+| Gunicorn | 23.0+ | Serwer WSGI |
+| SimpleJWT | 5.3+ | Autoryzacja JWT |
+
+### Frontend (Next.js)
+| Technologia | Wersja | Zastosowanie |
+|------------|--------|--------------|
+| Next.js | 15.5.3 | Framework React |
+| React | 19.1.1 | Biblioteka UI |
+| TypeScript | 5.9.2 | Typowanie statyczne |
+| Tailwind CSS | 3.4.17 | Stylowanie |
+| Radix UI | Latest | Komponenty UI |
+| Framer Motion | 12.23 | Animacje |
+| React Hook Form | 7.62 | Obsługa formularzy |
+| Axios | 1.12.2 | Klient HTTP |
+| next-intl | 4.3.9 | Internacjonalizacja |
+
+### DevOps
+| Narzędzie | Zastosowanie |
+|-----------|--------------|
+| Docker & Docker Compose | Konteneryzacja |
+| Nginx | Reverse proxy |
+| GitHub Actions | CI/CD |
+| Makefile | Automatyzacja zadań |
+
+## 📁 Struktura projektu
+
 ```
 KAPM-DJANGO/
-├── kapm-backend/       # Projekt Django (config, CMS, auth, moduły upadłości i restrukturyzacji)
-├── kapm-frontend/      # Projekt Next.js (App Router, komponenty, konteksty, i18n)
-├── docker-compose.yml  # Zestaw usług produkcyjnych (frontend, backend, postgres, redis)
-├── docker-compose.dev.yml
-├── Makefile            # Skróty do komend dockerowych
-├── navy-design-system/ # Biblioteka design systemu (Tailwind + Vite)
-├── PROJEKT - KAPM ...  # Materiały analityczne i makiety
-└── README_DOCKER.md    # Szczegóły konfiguracji dockerowej
+├── 📂 kapm-backend/            # Backend Django
+│   ├── authentication/         # System autoryzacji JWT
+│   ├── cms/                   # Moduł zarządzania treścią
+│   ├── core/                  # Wspólna funkcjonalność
+│   ├── restrukturyzacja/      # Moduł restrukturyzacji
+│   ├── upadlosc/              # Moduł upadłości
+│   └── config/                # Konfiguracja Django
+│
+├── 📂 kapm-frontend/           # Frontend Next.js
+│   ├── app/                   # App Router (Next.js 15)
+│   │   ├── [locale]/          # Routing wielojęzyczny
+│   │   ├── pl/               # Strony polskie
+│   │   └── en/               # Strony angielskie
+│   ├── components/            # Komponenty React
+│   ├── contexts/             # Context API
+│   ├── lib/                  # Biblioteki pomocnicze
+│   └── public/               # Zasoby statyczne
+│
+├── 📂 navy-design-system/      # System projektowania
+├── 📂 docker/                  # Konfiguracja Docker
+├── docker-compose.yml          # Produkcja
+├── docker-compose.dev.yml      # Development
+└── Makefile                    # Skróty komend
 ```
 
-## Wymagania wstępne (praca lokalna bez Dockera)
-- Python 3.11+
-- Node.js 18 LTS (lub nowszy kompatybilny z Next 15)
-- npm 9+ lub inny menedżer paczek (npm używany w repo)
-- opcjonalnie: PostgreSQL 15+, Redis 7+ jeśli chcesz odwzorować środowisko produkcyjne
+## 🚀 Instalacja i uruchomienie
 
-## Szybki start
-### Opcja 1: Docker Compose (rekomendowana)
-1. Skopiuj plik `.env.example` do `.env` i uzupełnij `DJANGO_SECRET_KEY` oraz ewentualnie inne sekrety.
-2. Uruchom środowisko developerskie (hot reload, mapowanie kodu):
-   ```bash
-   make dev       # alias dla docker-compose -f docker-compose.dev.yml up -d
-   ```
-3. Alternatywnie środowisko produkcyjne w Dockerze:
-   ```bash
-   make up        # alias dla docker-compose up -d
-   ```
-4. Adresy usług (dev/prod w Dockerze): frontend `http://localhost:3003`, backend `http://localhost:8003`, panel admina `http://localhost:8003/admin`.
-5. Do zatrzymania/wyczyszczenia środowiska użyj `make down` lub `make clean`.
+### Wymagania systemowe
+- **Python** 3.11+
+- **Node.js** 18 LTS lub nowszy
+- **Docker** & Docker Compose (opcjonalne)
+- **PostgreSQL** 15+ (produkcja)
+- **Redis** 7+ (cache i Celery)
 
-### Opcja 2: Lokalnie (bez Dockera)
-#### Backend (Django)
+### 🐳 Opcja 1: Docker (zalecane)
+
+#### Środowisko deweloperskie
+```bash
+# Sklonuj repozytorium
+git clone https://github.com/pmogielka/KAPM-DJANGO-DOCKER.git
+cd KAPM-DJANGO-DOCKER
+
+# Skopiuj i skonfiguruj zmienne środowiskowe
+cp .env.example .env
+# Edytuj .env i ustaw DJANGO_SECRET_KEY
+
+# Uruchom środowisko deweloperskie
+make dev
+
+# Aplikacja dostępna pod adresami:
+# Frontend: http://localhost:3003
+# Backend API: http://localhost:8003
+# Django Admin: http://localhost:8003/admin
+```
+
+#### Środowisko produkcyjne
+```bash
+# Uruchom środowisko produkcyjne
+make up
+
+# Wykonaj migracje
+make migrate
+
+# Zbierz pliki statyczne
+make collectstatic
+
+# Stwórz superużytkownika
+make createsuperuser
+```
+
+### 💻 Opcja 2: Lokalnie (bez Dockera)
+
+#### Backend Django
 ```bash
 cd kapm-backend
-python -m venv venv
-source venv/bin/activate            # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
-python create_superuser.py          # domyślnie admin / admin123
-python manage.py runserver 8004     # dopasuj port do frontendu (domyślnie 8004 w .env.local)
-```
-- Konfiguracja zmiennych znajduje się w `kapm-backend/.env`. Domyślnie `USE_SQLITE=True`; ustaw zmienne DB_* aby przełączyć się na PostgreSQL.
-- Skrypty Celery nie są uruchamiane automatycznie; konfiguracja brokera `REDIS_URL` znajduje się w `.env`.
 
-#### Frontend (Next.js)
+# Stwórz i aktywuj środowisko wirtualne
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+# Zainstaluj zależności
+pip install -r requirements.txt
+
+# Wykonaj migracje
+python manage.py migrate
+
+# Stwórz superużytkownika
+python create_superuser.py  # Tworzy: admin/admin123
+
+# Uruchom serwer deweloperski
+python manage.py runserver 8004
+```
+
+#### Frontend Next.js
 ```bash
 cd kapm-frontend
+
+# Zainstaluj zależności
 npm install
-npm run dev                       # domyślnie http://localhost:3004
+
+# Skonfiguruj zmienne środowiskowe
+cp .env.example .env.local
+# Edytuj .env.local - ustaw NEXT_PUBLIC_API_URL=http://localhost:8004
+
+# Uruchom serwer deweloperski
+npm run dev
+
+# Aplikacja dostępna: http://localhost:3004
 ```
-- Skonfiguruj zmienne w `kapm-frontend/.env.local`; najważniejsze to `NEXT_PUBLIC_API_URL` (8004 dla lokalnego, 8003 dla Dockera) i `NEXT_PUBLIC_FRONTEND_URL`.
-- Produkcyjne buildy: `npm run build` oraz `npm run start -p 3004` (możesz zmienić port przez zmienną `PORT`).
 
-#### Logowanie testowe
-- Panel admina Django: `admin` / `admin123` (utworzone przez `create_superuser.py`).
-- Użytkownik frontendowy: logowanie na stronie `/pl/login` z tymi samymi danymi.
-- Zmień hasła przed wdrożeniem produkcyjnym.
+## 🔧 Konfiguracja
 
-## Zmienne środowiskowe
-| Lokalizacja | Klucz | Opis |
-|------------|-------|------|
-| `.env` | `DJANGO_SECRET_KEY` | Sekretny klucz produkcyjny dla Django/Gunicorn |
-| `.env` | `DATABASE_URL` | Łącze do bazy PostgreSQL (używane przez docker-compose) |
-| `.env` | `FRONTEND_PORT`/`BACKEND_PORT` | Porty mapowane przez Compose (3003/8003) |
-| `kapm-backend/.env` | `DEBUG`, `USE_SQLITE`, `DB_*` | Konfiguracja środowiska backendu |
-| `kapm-backend/.env` | `REDIS_URL`, `FRONTEND_URL` | Integracja z Redisem i CORS |
-| `kapm-frontend/.env.local` | `NEXT_PUBLIC_API_URL` | Bazowy URL API używany przez frontend |
-| `kapm-frontend/.env.local` | `NEXT_PUBLIC_FRONTEND_URL` | Publiczny URL frontendu (potrzebny do cookies) |
+### Zmienne środowiskowe
 
-> Wskazówka: przy przełączaniu między Dockerem (3003/8003) a lokalnym developmentem (3004/8004) zaktualizuj `NEXT_PUBLIC_API_URL` i porty serwerów.
+#### Backend (.env w kapm-backend/)
+```env
+# Django
+DEBUG=True
+SECRET_KEY=your-secret-key-here
+ALLOWED_HOSTS=localhost,127.0.0.1
 
-## Testy i jakość
-- Backend: `cd kapm-backend && python manage.py test`
-- Frontend: `cd kapm-frontend && npm run lint`
-- W backendzie dostępna jest dokumentacja API w Swaggerze: `http://localhost:8003/api/docs/` (lub `8004`, zależnie od portu).
+# Baza danych
+USE_SQLITE=True  # False dla PostgreSQL
+DATABASE_URL=postgresql://user:pass@localhost:5432/kapm_db
 
-## Ważne komendy
-- `python create_superuser.py` – tworzy konto admin/admin123 oraz ustawia podstawowe role.
-- `make logs`, `make frontend`, `make backend` – szybki podgląd logów kontenerów.
-- `docker-compose down -v` – pełne zatrzymanie i usunięcie wolumenów (wyczyści media oraz bazę w kontenerach).
+# Redis & Celery
+REDIS_URL=redis://localhost:6379/0
 
-## Wdrożenie produkcyjne
-1. Ustaw `DEBUG=False` oraz własny `SECRET_KEY` (najlepiej z zmiennych środowiskowych).
-2. Skonfiguruj PostgreSQL i Redis; zaktualizuj `DATABASE_URL` i `REDIS_URL`.
-3. Uruchom migracje (`python manage.py migrate`) oraz statyczne pliki (`python manage.py collectstatic`).
-4. Uruchom backend przez Gunicorna lub inny serwer WSGI (Dockerfile produkcyjny już wykorzystuje Gunicorna).
-5. Za front odpowiada build Next.js (`npm run build` + `npm run start` lub hosting statyczny po `next export`).
-6. Skonfiguruj HTTPS (np. za reverse proxy nginx) i domeny w `ALLOWED_HOSTS`.
+# CORS
+FRONTEND_URL=http://localhost:3004
+```
 
-## Dalsze materiały
-- `README_DOCKER.md` – szczegółowe instrukcje dockera, portów i makefile.
-- `kapm-frontend/PORTS_CONFIG.md` – dodatkowe uwagi o portach front/back.
-- Folder `PROJEKT - KAPM - DJANGO` – materiały projektowe (makiety, opisy funkcjonalne).
+#### Frontend (.env.local w kapm-frontend/)
+```env
+# API
+NEXT_PUBLIC_API_URL=http://localhost:8004
+NEXT_PUBLIC_FRONTEND_URL=http://localhost:3004
 
-Jeśli coś budzi wątpliwości lub porty różnią się od zakładanych w Twoim środowisku, sprawdź aktualne wartości w plikach `.env` i dopasuj konfigurację frontendu i backendu.
+# JWT
+NEXT_PUBLIC_JWT_ACCESS_LIFETIME=5
+NEXT_PUBLIC_JWT_REFRESH_LIFETIME=1440
+```
+
+## 📝 Użytkowanie
+
+### Logowanie do panelu
+1. Przejdź do `/pl/login` (frontend) lub `/admin` (Django admin)
+2. Użyj domyślnych danych: `admin` / `admin123`
+3. **⚠️ Zmień hasło przed wdrożeniem produkcyjnym!**
+
+### Role użytkowników
+- **Administrator** - pełny dostęp do systemu
+- **Redaktor** - zarządzanie treścią i moderacja
+- **Autor** - tworzenie i edycja własnych treści
+- **Czytelnik** - tylko podgląd treści
+
+## 🧪 Testowanie
+
+```bash
+# Backend - testy Django
+cd kapm-backend
+python manage.py test
+
+# Frontend - linting
+cd kapm-frontend
+npm run lint
+
+# Frontend - build produkcyjny
+npm run build
+```
+
+## 📚 Dokumentacja API
+
+Po uruchomieniu backendu dostępna pod adresem:
+- **Swagger UI**: http://localhost:8004/api/docs/
+- **ReDoc**: http://localhost:8004/api/redoc/
+- **Schema OpenAPI**: http://localhost:8004/api/schema/
+
+## 🛡️ Bezpieczeństwo
+
+### Przed wdrożeniem produkcyjnym
+- [ ] Zmień domyślne hasła
+- [ ] Ustaw własny `DJANGO_SECRET_KEY`
+- [ ] Wyłącz `DEBUG=False`
+- [ ] Skonfiguruj HTTPS (certyfikat SSL)
+- [ ] Ustaw właściwe `ALLOWED_HOSTS`
+- [ ] Skonfiguruj firewall
+- [ ] Włącz monitoring i logi
+- [ ] Wykonaj audit bezpieczeństwa
+
+## 🚀 Deployment
+
+### Rekomendowane środowisko produkcyjne
+- **VPS/Cloud**: AWS EC2, DigitalOcean, Linode
+- **Reverse Proxy**: Nginx z SSL (Let's Encrypt)
+- **Baza danych**: PostgreSQL 15+ (managed)
+- **Cache**: Redis (managed)
+- **Storage**: S3 lub lokalny z backupem
+- **Monitoring**: Sentry, New Relic
+- **CI/CD**: GitHub Actions
+
+### Komendy produkcyjne
+```bash
+# Build obrazów Docker
+make build
+
+# Deploy z migracjami
+make deploy
+
+# Backup bazy danych
+make backup
+
+# Monitorowanie logów
+make logs
+```
+
+## 🤝 Współpraca
+
+### Konwencje kodu
+- **Python**: PEP 8, Black formatter
+- **JavaScript/TypeScript**: ESLint + Prettier
+- **Commits**: Conventional Commits
+- **Branching**: Git Flow
+
+### Struktura branchy
+- `main` - kod produkcyjny
+- `develop` - integracja zmian
+- `feature/*` - nowe funkcjonalności
+- `hotfix/*` - pilne poprawki
+
+## 📞 Kontakt i wsparcie
+
+**Kancelaria Adwokacka Przemysław Mogiełka**
+- 🌐 Website: [w budowie]
+- 📧 Email: kontakt@kapm.pl
+- 📱 Telefon: +48 XXX XXX XXX
+
+### Wsparcie techniczne
+- **Issues**: [GitHub Issues](https://github.com/pmogielka/KAPM-DJANGO-DOCKER/issues)
+- **Email**: dev@kapm.pl
+
+## 📄 Licencja
+
+© 2024 Kancelaria Adwokacka Przemysław Mogiełka. Wszystkie prawa zastrzeżone.
+
+Ten projekt jest własnością prywatną i nie może być używany, kopiowany ani modyfikowany bez pisemnej zgody właściciela.
+
+---
+
+**Developed with ❤️ for legal excellence**
