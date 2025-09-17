@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import "@/styles/infino/base.css";
+import "@/styles/infino/components.css";
+import "@/styles/infino/utilities.css";
 
-const inter = Inter({ subsets: ["latin", "latin-ext"] });
+const openSans = Open_Sans({
+  subsets: ["latin", "latin-ext"],
+  display: 'swap',
+  variable: '--font-open-sans'
+});
 
 export const metadata: Metadata = {
   title: "KAPM - Kancelaria Prawna | Prawo Upadłościowe i Restrukturyzacyjne",
@@ -17,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${openSans.className} ${openSans.variable}`}>
         {children}
       </body>
     </html>

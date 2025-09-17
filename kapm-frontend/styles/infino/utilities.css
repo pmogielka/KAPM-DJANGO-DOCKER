@@ -1,0 +1,96 @@
+/**
+ * Infino Legal - Utility Classes
+ * Helper classes for common patterns
+ */
+
+/* Flexbox utilities */
+.il-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.il-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Spacing utilities */
+.il-space-y-1 > * + * { margin-top: 0.25rem; }
+.il-space-y-2 > * + * { margin-top: 0.5rem; }
+.il-space-y-3 > * + * { margin-top: 0.75rem; }
+.il-space-y-4 > * + * { margin-top: 1rem; }
+.il-space-y-5 > * + * { margin-top: 1.25rem; }
+.il-space-y-6 > * + * { margin-top: 1.5rem; }
+
+/* Grid utilities */
+.il-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.il-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.il-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+/* Responsive grid */
+@media (max-width: 1024px) {
+  .il-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .il-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .il-grid-4,
+  .il-grid-3,
+  .il-grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Text utilities */
+.il-text-center { text-align: center; }
+.il-text-left { text-align: left; }
+.il-text-right { text-align: right; }
+
+.il-text-muted { color: var(--infino-text-muted); }
+.il-text-secondary { color: var(--infino-text-secondary); }
+.il-text-primary { color: var(--infino-text-primary); }
+
+/* Shadow utilities */
+.il-shadow-sm { box-shadow: var(--infino-shadow-sm); }
+.il-shadow-md { box-shadow: var(--infino-shadow-md); }
+.il-shadow-lg { box-shadow: var(--infino-shadow-lg); }
+
+/* Stat cards */
+.il-stat-card {
+  background: var(--infino-bg-card);
+  border: 1px solid var(--infino-border);
+  border-radius: var(--infino-radius);
+  padding: 1.5rem;
+  box-shadow: var(--infino-shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.il-stat-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: var(--infino-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.il-stat-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--infino-text-primary);
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+.il-stat-label {
+  font-size: var(--infino-font-size-sm);
+  color: var(--infino-text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.il-stat-description {
+  font-size: var(--infino-font-size-xs);
+  color: var(--infino-text-muted);
+  margin-top: 0.25rem;
+}

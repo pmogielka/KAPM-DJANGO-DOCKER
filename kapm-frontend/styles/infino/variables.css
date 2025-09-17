@@ -1,0 +1,93 @@
+/**
+ * Infino Legal - CSS Variables
+ * Design system variables for consistent theming
+ */
+
+:root {
+  /* Primary Colors */
+  --infino-primary: #5d78ff;
+  --infino-primary-hover: #4e69e6;
+  --infino-primary-light: rgba(93, 120, 255, 0.1);
+
+  /* Status Colors */
+  --infino-success: #1bc5bd;
+  --infino-warning: #ffa800;
+  --infino-danger: #f64e60;
+  --infino-info: #8950fc;
+
+  /* Text Colors */
+  --infino-text-primary: #282a3c;
+  --infino-text-secondary: #6c757d;
+  --infino-text-muted: #b5b5c3;
+  --infino-text-light: #a1a5b7;
+
+  /* Background Colors */
+  --infino-bg-main: #f2f3f8;
+  --infino-bg-card: #ffffff;
+  --infino-bg-hover: #f3f6f9;
+  --infino-bg-active: #ebedf2;
+
+  /* Border Colors */
+  --infino-border: #ebedf2;
+  --infino-border-light: #f3f6f9;
+  --infino-border-dark: #d1d3e0;
+
+  /* Shadows */
+  --infino-shadow-sm: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.05);
+  --infino-shadow-md: 0 0.5rem 1.5rem 0.5rem rgba(0, 0, 0, 0.08);
+  --infino-shadow-lg: 0 1rem 2rem 0.5rem rgba(0, 0, 0, 0.1);
+
+  /* Spacing */
+  --infino-spacing-xs: 4px;
+  --infino-spacing-sm: 8px;
+  --infino-spacing-md: 16px;
+  --infino-spacing-lg: 24px;
+  --infino-spacing-xl: 32px;
+  --infino-spacing-xxl: 48px;
+
+  /* Border Radius */
+  --infino-radius: 3px;
+  --infino-radius-lg: 6px;
+  --infino-radius-full: 9999px;
+
+  /* Typography */
+  --infino-font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --infino-font-size-xs: 11px;
+  --infino-font-size-sm: 12px;
+  --infino-font-size-base: 13px;
+  --infino-font-size-md: 14px;
+  --infino-font-size-lg: 16px;
+  --infino-font-size-xl: 18px;
+  --infino-font-size-xxl: 20px;
+
+  /* Layout */
+  --infino-header-height: 65px;
+  --infino-sidebar-width: 265px;
+  --infino-sidebar-collapsed: 70px;
+  --infino-page-gutter: 24px;
+
+  /* Container Widths */
+  --container-xnarrow: 560px;
+  --container-narrow: 720px;
+  --container-medium: 1140px;
+  --container-default: 1360px;
+  --container-wide: 1540px;
+
+  /* Z-index */
+  --infino-z-dropdown: 1000;
+  --infino-z-sticky: 1020;
+  --infino-z-fixed: 1030;
+  --infino-z-modal-backdrop: 1040;
+  --infino-z-modal: 1050;
+  --infino-z-popover: 1060;
+  --infino-z-tooltip: 1070;
+}
+
+/* Dark mode variables (optional) */
+[data-theme="dark"] {
+  --infino-bg-main: #1a1a27;
+  --infino-bg-card: #1e1e2d;
+  --infino-text-primary: #ffffff;
+  --infino-text-secondary: #92929f;
+  --infino-border: #2b2b40;
+}

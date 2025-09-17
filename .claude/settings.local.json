@@ -34,7 +34,13 @@
       "Bash(osascript:*)",
       "Bash(git add:*)",
       "Bash(git init:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npm outdated)",
+      "Bash(npx shadcn@latest init:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run build:*)",
+      "Bash(git push:*)",
+      "Bash(ls:*)"
     ],
     "deny": [],
     "ask": []

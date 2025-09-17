@@ -1,0 +1,286 @@
+/**
+ * Infino Legal - Component Styles
+ * Reusable component classes
+ */
+
+/* Buttons */
+.il-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.5rem;
+  font-size: var(--infino-font-size-base);
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: var(--infino-radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  user-select: none;
+  gap: 0.5rem;
+}
+
+.il-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.il-btn-primary {
+  background-color: var(--infino-primary);
+  color: white;
+  border-color: var(--infino-primary);
+}
+
+.il-btn-primary:hover:not(:disabled) {
+  background-color: var(--infino-primary-hover);
+  border-color: var(--infino-primary-hover);
+}
+
+.il-btn-secondary {
+  background-color: var(--infino-bg-hover);
+  color: var(--infino-text-primary);
+  border-color: var(--infino-border);
+}
+
+.il-btn-secondary:hover:not(:disabled) {
+  background-color: var(--infino-bg-active);
+}
+
+.il-btn-success {
+  background-color: var(--infino-success);
+  color: white;
+  border-color: var(--infino-success);
+}
+
+.il-btn-danger {
+  background-color: var(--infino-danger);
+  color: white;
+  border-color: var(--infino-danger);
+}
+
+.il-btn-sm {
+  padding: 0.375rem 1rem;
+  font-size: var(--infino-font-size-sm);
+}
+
+.il-btn-lg {
+  padding: 0.75rem 2rem;
+  font-size: var(--infino-font-size-md);
+}
+
+/* Cards */
+.il-card {
+  background-color: var(--infino-bg-card);
+  border: 1px solid var(--infino-border);
+  border-radius: var(--infino-radius);
+  box-shadow: var(--infino-shadow-sm);
+  overflow: hidden;
+}
+
+.il-card-header {
+  padding: var(--infino-spacing-lg);
+  border-bottom: 1px solid var(--infino-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+}
+
+.il-card-title {
+  font-size: var(--infino-font-size-lg);
+  font-weight: 600;
+  color: var(--infino-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.il-card-body {
+  padding: var(--infino-spacing-lg);
+}
+
+.il-card-footer {
+  padding: var(--infino-spacing-lg);
+  border-top: 1px solid var(--infino-border);
+  background-color: var(--infino-bg-hover);
+}
+
+/* Forms */
+.il-form-group {
+  margin-bottom: var(--infino-spacing-lg);
+}
+
+.il-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: var(--infino-font-size-base);
+  font-weight: 500;
+  color: var(--infino-text-primary);
+}
+
+.il-input,
+.il-select,
+.il-textarea {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  font-size: var(--infino-font-size-base);
+  line-height: 1.5;
+  color: var(--infino-text-primary);
+  background-color: var(--infino-bg-card);
+  border: 1px solid var(--infino-border);
+  border-radius: var(--infino-radius);
+  transition: border-color 0.2s ease;
+}
+
+.il-input:focus,
+.il-select:focus,
+.il-textarea:focus {
+  outline: none;
+  border-color: var(--infino-primary);
+  box-shadow: 0 0 0 0.2rem var(--infino-primary-light);
+}
+
+.il-input:disabled,
+.il-select:disabled,
+.il-textarea:disabled {
+  background-color: var(--infino-bg-hover);
+  cursor: not-allowed;
+}
+
+.il-input-error,
+.il-select-error,
+.il-textarea-error {
+  border-color: var(--infino-danger);
+}
+
+.il-error-message {
+  margin-top: 0.25rem;
+  font-size: var(--infino-font-size-sm);
+  color: var(--infino-danger);
+}
+
+/* Alerts */
+.il-alert {
+  padding: 1rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--infino-radius);
+  margin-bottom: var(--infino-spacing-md);
+}
+
+.il-alert-info {
+  background-color: rgba(141, 80, 252, 0.1);
+  border-color: rgba(141, 80, 252, 0.2);
+  color: var(--infino-info);
+}
+
+.il-alert-success {
+  background-color: rgba(27, 197, 189, 0.1);
+  border-color: rgba(27, 197, 189, 0.2);
+  color: var(--infino-success);
+}
+
+.il-alert-warning {
+  background-color: rgba(255, 168, 0, 0.1);
+  border-color: rgba(255, 168, 0, 0.2);
+  color: var(--infino-warning);
+}
+
+.il-alert-danger {
+  background-color: rgba(246, 78, 96, 0.1);
+  border-color: rgba(246, 78, 96, 0.2);
+  color: var(--infino-danger);
+}
+
+/* Badges */
+.il-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--infino-font-size-xs);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--infino-radius);
+  text-transform: uppercase;
+}
+
+.il-badge-primary {
+  background-color: var(--infino-primary-light);
+  color: var(--infino-primary);
+}
+
+.il-badge-success {
+  background-color: rgba(27, 197, 189, 0.1);
+  color: var(--infino-success);
+}
+
+.il-badge-warning {
+  background-color: rgba(255, 168, 0, 0.1);
+  color: var(--infino-warning);
+}
+
+.il-badge-danger {
+  background-color: rgba(246, 78, 96, 0.1);
+  color: var(--infino-danger);
+}
+
+/* Tables */
+.il-table {
+  width: 100%;
+  background-color: var(--infino-bg-card);
+  border-collapse: collapse;
+}
+
+.il-table th {
+  padding: 1rem;
+  text-align: left;
+  font-size: var(--infino-font-size-xs);
+  font-weight: 600;
+  color: var(--infino-text-secondary);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--infino-border);
+  background-color: var(--infino-bg-hover);
+}
+
+.il-table td {
+  padding: 1rem;
+  font-size: var(--infino-font-size-base);
+  color: var(--infino-text-primary);
+  border-bottom: 1px solid var(--infino-border-light);
+}
+
+.il-table tbody tr:hover {
+  background-color: var(--infino-bg-hover);
+}
+
+/* Loading spinner */
+.il-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid var(--infino-border);
+  border-top-color: var(--infino-primary);
+  border-radius: 50%;
+  animation: il-spin 1s linear infinite;
+}
+
+@keyframes il-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Container layouts */
+.il-container {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--infino-page-gutter);
+  padding-right: var(--infino-page-gutter);
+  max-width: var(--container-default);
+}
+
+.il-container--xnarrow { max-width: var(--container-xnarrow); }
+.il-container--narrow { max-width: var(--container-narrow); }
+.il-container--medium { max-width: var(--container-medium); }
+.il-container--wide { max-width: var(--container-wide); }
+.il-container--fluid { max-width: none; }

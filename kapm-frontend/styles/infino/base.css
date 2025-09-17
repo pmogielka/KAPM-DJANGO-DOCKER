@@ -1,0 +1,113 @@
+/**
+ * Infino Legal - Base Styles
+ * Core resets and foundational styles
+ */
+
+/* Import variables */
+@import './variables.css';
+
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100%;
+  font-family: var(--infino-font-family);
+  font-size: var(--infino-font-size-base);
+  line-height: 1.5;
+  color: var(--infino-text-primary);
+  background-color: var(--infino-bg-main);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--infino-text-primary);
+}
+
+h1 { font-size: var(--infino-font-size-xxl); }
+h2 { font-size: var(--infino-font-size-xl); }
+h3 { font-size: var(--infino-font-size-lg); }
+h4 { font-size: 15px; }
+h5 { font-size: var(--infino-font-size-md); }
+h6 { font-size: var(--infino-font-size-base); }
+
+/* Links */
+a {
+  color: var(--infino-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--infino-primary-hover);
+  text-decoration: underline;
+}
+
+/* Paragraphs */
+p {
+  margin: 0 0 1rem;
+  color: var(--infino-text-secondary);
+}
+
+/* Lists */
+ul, ol {
+  margin: 0 0 1rem;
+  padding-left: 1.5rem;
+}
+
+/* Forms */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--infino-primary);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--infino-bg-hover);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--infino-border-dark);
+  border-radius: var(--infino-radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--infino-text-muted);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--infino-primary);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--infino-primary);
+  color: white;
+}

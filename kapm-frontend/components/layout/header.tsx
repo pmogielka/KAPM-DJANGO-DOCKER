@@ -120,7 +120,7 @@ export function Header() {
         {/* Language Switcher & CTA Button */}
         <div className="hidden lg:flex lg:items-center lg:space-x-4">
           <LanguageSwitcher />
-          <Link href={`/${locale}/login`}>
+          <Link href={`/${locale}/auth/login`}>
             <Button variant="outline" className="border-brand-600 text-brand-600 hover:bg-brand-50">
               <Lock className="mr-2 h-4 w-4" />
               {t('login')}
@@ -177,7 +177,7 @@ export function Header() {
               ))}
             </ul>
             <div className="mt-8 space-y-4">
-              <Link href={`/${locale}/login`} className="block">
+              <Link href={`/${locale}/auth/login`} className="block">
                 <Button variant="outline" className="w-full border-brand-600 text-brand-600 hover:bg-brand-50">
                   <Lock className="mr-2 h-4 w-4" />
                   {t('login')}

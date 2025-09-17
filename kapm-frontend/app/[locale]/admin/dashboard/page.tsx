@@ -1,11 +1,18 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Skeleton } from '@/components/ui/skeleton';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  Button,
+  Badge
+} from '@/components/infino/InfinoPageCard';
+import { adminAPI } from '@/lib/api';
+import Link from 'next/link';
+import { useLocale } from 'next-intl';
 import {
   FileText,
   Users,
@@ -17,10 +24,11 @@ import {
   AlertCircle,
   Edit,
   Trash2,
+  Activity,
+  DollarSign,
+  ShoppingCart,
+  CreditCard
 } from 'lucide-react';
-import { adminAPI } from '@/lib/api';
-import Link from 'next/link';
-import { useLocale } from 'next-intl';
 
 interface DashboardStats {
   total_posts: number;
@@ -93,17 +101,17 @@ export default function DashboardPage() {
 
   const getStatusBadge = (status: string) => {
     const variants: { [key: string]: any } = {
-      published: { variant: 'default', label: 'Opublikowany' },
-      draft: { variant: 'secondary', label: 'Szkic' },
-      archived: { variant: 'outline', label: 'Zarchiwizowany' },
+      published: { className: 'il-badge il-badge-success', label: 'Opublikowany' },
+      draft: { className: 'il-badge il-badge-warning', label: 'Szkic' },
+      archived: { className: 'il-badge', label: 'Zarchiwizowany' },
     };
 
     const config = variants[status] || variants['draft'];
 
     return (
-      <Badge variant={config.variant as any}>
+      <span className={config.className}>
         {config.label}
-      </Badge>
+      </span>
     );
   };
 
@@ -111,17 +119,17 @@ export default function DashboardPage() {
     return (
       <div className="space-y-6">
         <div className="flex items-center justify-between">
-          <Skeleton className="h-8 w-48" />
-          <Skeleton className="h-10 w-32" />
+          <div className="h-8 w-48 bg-gray-200 rounded animate-pulse" />
+          <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {[1, 2, 3, 4].map((i) => (
-            <Skeleton key={i} className="h-32" />
+            <div key={i} className="h-32 bg-gray-200 rounded animate-pulse" />
           ))}
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
-          <Skeleton className="h-96" />
-          <Skeleton className="h-96" />
+          <div className="h-96 bg-gray-200 rounded animate-pulse" />
+          <div className="h-96 bg-gray-200 rounded animate-pulse" />
         </div>
       </div>
     );
@@ -129,10 +137,10 @@ export default function DashboardPage() {
 
   if (error) {
     return (
-      <Alert variant="destructive">
+      <div className="il-alert il-alert-danger flex items-center gap-2">
         <AlertCircle className="h-4 w-4" />
-        <AlertDescription>{error}</AlertDescription>
-      </Alert>
+        <span>{error}</span>
+      </div>
     );
   }
 
@@ -144,66 +152,64 @@ export default function DashboardPage() {
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
           <p className="text-gray-500 mt-1">Witaj w panelu administracyjnym KAPM</p>
         </div>
-        <Button asChild className="bg-brand-600 hover:bg-brand-700">
-          <Link href={`/${locale}/admin/blog/new`}>
-            <Plus className="mr-2 h-4 w-4" />
-            Nowy post
-          </Link>
-        </Button>
+        <Link href={`/${locale}/admin/blog/new`} className="il-btn il-btn-primary">
+          <Plus className="h-4 w-4" />
+          Nowy post
+        </Link>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Wszystkie posty</CardTitle>
-            <FileText className="h-4 w-4 text-gray-500" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats?.total_posts || 0}</div>
-            <p className="text-xs text-gray-500">
-              {stats?.published_posts || 0} opublikowanych, {stats?.draft_posts || 0} szkiców
-            </p>
-          </CardContent>
-        </Card>
+      <div className="il-grid-4">
+        <div className="il-stat-card">
+          <div className="il-flex-between">
+            <div className="il-stat-icon" style={{ backgroundColor: 'var(--infino-primary-light)' }}>
+              <FileText className="h-5 w-5" style={{ color: 'var(--infino-primary)' }} />
+            </div>
+            <span className="il-stat-value">{stats?.total_posts || 0}</span>
+          </div>
+          <h3 className="il-stat-label">Wszystkie posty</h3>
+          <p className="il-stat-description">
+            {stats?.published_posts || 0} opublikowanych, {stats?.draft_posts || 0} szkiców
+          </p>
+        </div>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Komentarze</CardTitle>
-            <MessageSquare className="h-4 w-4 text-gray-500" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats?.total_comments || 0}</div>
-            <p className="text-xs text-gray-500">
-              {stats?.pending_comments || 0} oczekujących na moderację
-            </p>
-          </CardContent>
-        </Card>
+        <div className="il-stat-card">
+          <div className="il-flex-between">
+            <div className="il-stat-icon" style={{ backgroundColor: 'rgba(27, 197, 189, 0.1)' }}>
+              <MessageSquare className="h-5 w-5" style={{ color: 'var(--infino-success)' }} />
+            </div>
+            <span className="il-stat-value">{stats?.total_comments || 0}</span>
+          </div>
+          <h3 className="il-stat-label">Komentarze</h3>
+          <p className="il-stat-description">
+            {stats?.pending_comments || 0} oczekujących na moderację
+          </p>
+        </div>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Użytkownicy</CardTitle>
-            <Users className="h-4 w-4 text-gray-500" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats?.total_users || 0}</div>
-            <p className="text-xs text-gray-500">Aktywni użytkownicy</p>
-          </CardContent>
-        </Card>
+        <div className="il-stat-card">
+          <div className="il-flex-between">
+            <div className="il-stat-icon" style={{ backgroundColor: 'rgba(255, 168, 0, 0.1)' }}>
+              <Users className="h-5 w-5" style={{ color: 'var(--infino-warning)' }} />
+            </div>
+            <span className="il-stat-value">{stats?.total_users || 0}</span>
+          </div>
+          <h3 className="il-stat-label">Użytkownicy</h3>
+          <p className="il-stat-description">Aktywni użytkownicy</p>
+        </div>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Wyświetlenia</CardTitle>
-            <Eye className="h-4 w-4 text-gray-500" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{stats?.total_views || 0}</div>
-            <p className="text-xs text-gray-500">
-              <TrendingUp className="inline h-3 w-3 mr-1" />
-              Łączna liczba wyświetleń
-            </p>
-          </CardContent>
-        </Card>
+        <div className="il-stat-card">
+          <div className="il-flex-between">
+            <div className="il-stat-icon" style={{ backgroundColor: 'rgba(141, 80, 252, 0.1)' }}>
+              <Eye className="h-5 w-5" style={{ color: 'var(--infino-info)' }} />
+            </div>
+            <span className="il-stat-value">{stats?.total_views || 0}</span>
+          </div>
+          <h3 className="il-stat-label">Wyświetlenia</h3>
+          <p className="il-stat-description">
+            <TrendingUp className="inline h-3 w-3 mr-1" />
+            Łączna liczba wyświetleń
+          </p>
+        </div>
       </div>
 
       {/* Recent Content */}
