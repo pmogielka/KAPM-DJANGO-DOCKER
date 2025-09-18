@@ -36,7 +36,7 @@ export default function InfinoHeader({ onMenuToggle }: InfinoHeaderProps) {
 
   const handleLogout = async () => {
     await authAPI.logout();
-    router.push(`/${locale}/auth/login`);
+    router.push(`/${locale}`); // Przekierowanie na landing page z lokalizacją
   };
 
   const getUserInitials = () => {

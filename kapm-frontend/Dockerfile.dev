@@ -3,16 +3,20 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Install dependencies
+# Install dependencies (kopiujemy tylko pliki potrzebne do instalacji)
 COPY package.json package-lock.json* ./
-RUN npm install
+RUN npm install && npm cache clean --force
 
-# Copy app files
+# Copy app files (bez node_modules - będą w volume)
 COPY . .
 
 # WAŻNE: Port 3003 dla frontendu
 EXPOSE 3003
 ENV PORT 3003
+ENV NODE_ENV development
+
+# Upewnij się, że node_modules mają odpowiednie uprawnienia
+RUN chmod -R 755 /app/node_modules 2>/dev/null || true
 
 # Start development server na porcie 3003
 CMD ["npm", "run", "dev"]

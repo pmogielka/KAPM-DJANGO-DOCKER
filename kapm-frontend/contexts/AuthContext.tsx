@@ -76,7 +76,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       await authAPI.logout();
     } finally {
       setUser(null);
-      router.push('/');
+      router.push('/pl'); // Przekierowanie na landing page z lokalizacją
     }
   };
 
